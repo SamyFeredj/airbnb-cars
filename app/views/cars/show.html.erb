@@ -1,0 +1,15 @@
+<div class="car-show-container">
+  <% if @car.photo.attached? %>
+    <%= image_tag @car.photo, class: "car-image" %>
+  <% end %>
+
+  <div class="car-details">
+    <h1 class="car-title"><%= @car.brand %> - <%= @car.car_model %></h1>
+    <p class="car-location"><strong>Localisation :</strong> <%= @car.car_location %></p>
+    <p class="car-price"><strong>Prix :</strong> <%= number_to_currency(@car.rent_price, unit: "€") %>/jour</p>
+    <p class="car-kilometers"><strong>Kilométrage :</strong> <%= @car.kilometers %> km</p>
+    <p class="car-year"><strong>Année de sortie :</strong> <%= @car.release_year %></p>
+  </div>
+
+  <%= link_to "Retour à la liste", cars_path, class: "btn" %>
+</div>
