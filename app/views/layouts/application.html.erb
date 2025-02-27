@@ -11,15 +11,15 @@
   </head>
   <% if user_signed_in? %>
     <p>Bienvenue, <%= current_user.email %>!</p>
-    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-danger" %>
+    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "my-btn btn-danger" %>
 
 
 
 
 
   <% else %>
-    <%= link_to "Connexion", new_user_session_path, class: "btn btn-primary" %>
-    <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-secondary" %>
+    <%= link_to "Connexion", new_user_session_path, class: "my-btn btn-primary" %>
+    <%= link_to "S'inscrire", new_user_registration_path, class: "my-btn btn-secondary" %>
   <% end %>
 
   <body>
