@@ -1,0 +1,42 @@
+<h1>Ajouter une voiture</h1>
+
+<%= form_with model: @car, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :brand, "Marque" %>
+    <%= f.text_field :brand, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :car_model, "Modèle" %>
+    <%= f.text_field :car_model, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :car_location, "Localisation" %>
+    <%= f.text_field :car_location, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rent_price, "Prix de location (€)" %>
+    <%= f.number_field :rent_price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :kilometers, "Kilométrage (km)" %>
+    <%= f.number_field :kilometers, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :release_year, "Année de sortie" %>
+    <%= f.number_field :release_year, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :photo, "Photo" %>
+    <%= f.file_field :photo, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Ajouter la voiture", class: "btn btn-success mt-3" %>
+<% end %>
+
+<a href="<%= cars_path %>" class="btn btn-secondary mt-3">Retour à la liste</a>
