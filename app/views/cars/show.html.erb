@@ -11,6 +11,5 @@
     <p class="car-year"><strong>Année de sortie :</strong> <%= @car.release_year %></p>
   </div>
 
-  <a href="<%= cars_path %>" class="btn">Retour à la liste</a>
+  <%= link_to "Retour à la liste", cars_path, class: "btn" %>
 </div>
-
