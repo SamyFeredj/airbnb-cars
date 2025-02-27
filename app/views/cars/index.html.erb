@@ -4,7 +4,7 @@
 <div class="cars-container">
   <% @cars.each do |car| %>
     <div class="car-card">
-      <%= image_tag car.photo.attached? ? car.photo : 'default_car.jpg', alt: car.brand, class: "car-image" %>
+      <%= image_tag car.photo.attached? ? url_for(car.photo) : 'default_car.jpg', alt: car.brand, class: "car-image" %>
       <h2><%= car.brand %> - <%= car.car_model %></h2>
       <p><strong>Localisation :</strong> <%= car.car_location %></p>
       <p><strong>Prix de location :</strong> <%= number_to_currency(car.rent_price, unit: "€") %> / jour</p>
