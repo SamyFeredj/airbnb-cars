@@ -1,0 +1,31 @@
+.user-profile-dropdown {
+  display: none;
+  height: $dropdown-height;
+  width: $dropdown-width;
+  position: absolute;
+  top: calc(2*#{$navbar-py} + #{$user-avatar-size});
+  right: 0;
+  transition: 0.3s ease;
+
+  li {
+    background: white;
+    padding: 20px;
+    &:hover {
+      background: rgb(230, 230, 230);
+    }
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.user-profile-clicked {
+  display: block;
+}
