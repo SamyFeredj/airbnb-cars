@@ -1,12 +1,25 @@
-.navbar-lewagon {
+$navbar-py: 20px;
+$navbar-px: 20px;
+
+.my-navbar {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background: white;
-}
+  padding: $navbar-py $navbar-px;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .application-logo {
+    a {
+      text-decoration: none !important;
+      color: black;
+      font-size: 24px;
+      letter-spacing: 5px;
+      font-weight: 600;
+    }
+  }
 }
