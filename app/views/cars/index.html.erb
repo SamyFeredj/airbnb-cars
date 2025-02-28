@@ -1,15 +1,8 @@
 <!-- app/views/cars/index.html.erb -->
-<h1>Liste des voitures</h1>
+<h1 class="mt-5">Liste des voitures</h1>
 
 <div class="cars-container">
   <% @cars.each do |car| %>
-    <div class="car-card">
-      <%= image_tag car.photo.attached? ? url_for(car.photo) : 'default_car.jpg', alt: car.brand, class: "car-image" %>
-      <h2><%= car.brand %> - <%= car.car_model %></h2>
-      <p><strong>Localisation :</strong> <%= car.car_location %></p>
-      <p><strong>Prix de location :</strong> <%= number_to_currency(car.rent_price, unit: "€") %> / jour</p>
-      <%= link_to "Voir les détails", car_path(car), class: "my-btn" %>
-    </div>
+    <%= render "car_card", car: car %>
   <% end %>
 </div>
-<%= link_to "Ajouter une voiture", new_car_path, class: "my-btn btn-primary" %>
