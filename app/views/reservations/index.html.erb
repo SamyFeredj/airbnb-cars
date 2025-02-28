@@ -1,0 +1,6 @@
+<h1>List de mes réservations</h1>
+
+<% @reservations.user.each do |reservation| %>
+  <%= reservation.start_date %>
+  <%= reservation.end_date %>
+  <% end %>
