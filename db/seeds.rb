@@ -22,7 +22,7 @@ puts " ====================== "
 #
 # ===== USERS
 print "Creating user 1..."
-samy = User.new(email: "samyferedj@outlook.fr", password: "password", first_name: "samy", last_name: "feredj", phone_number: "0123456789")
+samy = User.new(email: "samyferedj@outlook.fr", password: "password", first_name: "samy", last_name: "feredj", phone_number: "0123456789", picture_url: "samy-profil.jpg")
 samy.save!
 puts " OK !"
 #
