@@ -12,10 +12,12 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .car-details {
   margin-top: 20px;
+  padding: 15px;
 }
 
 .car-title {
