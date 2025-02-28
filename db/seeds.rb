@@ -1,9 +1,11 @@
 require 'json'
 require 'open-uri'
+require 'date'
 
 # Cleaning database
 print "Cleaning database..."
 if Rails.env == "development"
+  Reservation.destroy_all
   Car.destroy_all
   User.destroy_all
 end
@@ -59,8 +61,35 @@ car3 = Car.new(brand: "Renault", car_model: "Capture", car_location: "Angers", r
 car3.photo.attach(io: URI.open(img_car3), filename: 'car3.png', content_type: 'image/png')
 car3.save!
 puts " OK !"
-
+#
+puts " ====================== "
+#
+# ===== RESERVATIONS
+print "Creating reservation 1..."
+reservation1 = Reservation.new(car_id: car1.id, user_id: samy.id, start_date: Date.new(2025, 01, 01), end_date: Date.new(2025, 01, 31))
+reservation1.total_price = car1.rent_price*((reservation1.end_date - reservation1.start_date).to_i)
+reservation1.status = "Pending"
+reservation1.save!
+puts " OK !"
+# ==
+print "Creating reservation 2..."
+reservation2 = Reservation.new(car_id: car2.id, user_id: arli.id, start_date: Date.new(2025, 02, 01), end_date: Date.new(2025, 02, 28))
+reservation2.total_price = car2.rent_price*((reservation2.end_date - reservation2.start_date).to_i)
+reservation2.status = "Accepted"
+reservation2.save!
+puts " OK !"
+# ==
+print "Creating reservation 3..."
+reservation3 = Reservation.new(car_id: car3.id, user_id: samy.id, start_date: Date.new(2025, 03, 01), end_date: Date.new(2025, 03, 30))
+reservation3.total_price = car3.rent_price*((reservation3.end_date - reservation3.start_date).to_i)
+reservation3.status = "Rejected"
+reservation3.save!
+puts " OK !"
+#
+puts " ====================== "
+#
 # End of database generation
 puts "End of generation of database"
 puts "#{Car.count} cars generated"
 puts "#{User.count} users generated"
+puts "#{Reservation.count} reservations generated"
