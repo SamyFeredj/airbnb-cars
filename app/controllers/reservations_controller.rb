@@ -1,7 +1,10 @@
 class ReservationsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:id])
-    @reservations.user = @user
-    @reservations = Reservation.all
+    @reservations = Reservation.all.select { |reservation| reservation.user_id == current_user.id }
+  end
+
+  def mycars
+    @reservations = Reservation.all.select { |reservation| reservation.user_id == current_user.id  && reservation.car_id == current_user.cars[:id] }
+    raise
   end
 end
