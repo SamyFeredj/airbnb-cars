@@ -66,21 +66,21 @@ puts " ====================== "
 #
 # ===== RESERVATIONS
 print "Creating reservation 1..."
-reservation1 = Reservation.new(car_id: car1.id, user_id: samy.id, start_date: Date.new(2025, 01, 01), end_date: Date.new(2025, 01, 31))
+reservation1 = Reservation.new(car_id: car1.id, user_id: marcus.id, start_date: Date.new(2025, 01, 01), end_date: Date.new(2025, 01, 31))
 reservation1.total_price = car1.rent_price*((reservation1.end_date - reservation1.start_date).to_i)
 reservation1.status = "Pending"
 reservation1.save!
 puts " OK !"
 # ==
 print "Creating reservation 2..."
-reservation2 = Reservation.new(car_id: car2.id, user_id: arli.id, start_date: Date.new(2025, 02, 01), end_date: Date.new(2025, 02, 28))
+reservation2 = Reservation.new(car_id: car2.id, user_id: marcus.id, start_date: Date.new(2025, 02, 01), end_date: Date.new(2025, 02, 28))
 reservation2.total_price = car2.rent_price*((reservation2.end_date - reservation2.start_date).to_i)
 reservation2.status = "Accepted"
 reservation2.save!
 puts " OK !"
 # ==
 print "Creating reservation 3..."
-reservation3 = Reservation.new(car_id: car3.id, user_id: samy.id, start_date: Date.new(2025, 03, 01), end_date: Date.new(2025, 03, 30))
+reservation3 = Reservation.new(car_id: car3.id, user_id: laurent.id, start_date: Date.new(2025, 03, 01), end_date: Date.new(2025, 03, 30))
 reservation3.total_price = car3.rent_price*((reservation3.end_date - reservation3.start_date).to_i)
 reservation3.status = "Rejected"
 reservation3.save!

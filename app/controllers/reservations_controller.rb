@@ -4,7 +4,6 @@ class ReservationsController < ApplicationController
   end
 
   def mycars
-    @reservations = Reservation.all.select { |reservation| reservation.user_id == current_user.id  && reservation.car_id == current_user.cars[:id] }
-    raise
+    @reservations = Reservation.where(car_id: Car.where(user_id: current_user.id).map { |car| car.id })
   end
 end
