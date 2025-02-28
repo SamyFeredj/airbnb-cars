@@ -1,11 +1,13 @@
 require 'json'
 require 'open-uri'
+require 'date'
 
 # Cleaning database
 print "Cleaning database..."
 if Rails.env == "development"
   Car.destroy_all
   User.destroy_all
+  Reservation.destroy_all
 end
 puts " OK !"
 
@@ -59,8 +61,21 @@ car3 = Car.new(brand: "Renault", car_model: "Capture", car_location: "Angers", r
 car3.photo.attach(io: URI.open(img_car3), filename: 'car3.png', content_type: 'image/png')
 car3.save!
 puts " OK !"
+#
+# ===== RESERVATIONS
+print "Creating reservation 1..."
+reservation1 = Reservation.new(car_id: car1.id, user_id: samy.id, start_date: Date.new(2025, 01, 01), end_date: Date.new(2025, 01, 30), total_price: car1.rent_price*((end_date - start_date).to_i), status: "Pending")
+reservation1.save!
+puts " OK !"
+# ==
+print "Creating reservation 2..."
+reservation2 = Reservation.new(car_id: car2.id, user_id: arli.id, start_date: Date.new(2025, 02, 01), end_date: Date.new(2025, 02, 28), total_price: car2.rent_price*((end_date - start_date).to_i), status: "Accepted")
+reservation2.save!
+puts " OK !"
+
 
 # End of database generation
 puts "End of generation of database"
 puts "#{Car.count} cars generated"
 puts "#{User.count} users generated"
+puts "#{Reservation.count} users generated"
