@@ -6,6 +6,7 @@
   top: calc(2*#{$navbar-py} + #{$user-avatar-size});
   right: 0;
   transition: 0.3s ease;
+  z-index: 10;
 
   li {
     background: white;
