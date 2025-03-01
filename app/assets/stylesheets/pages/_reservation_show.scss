@@ -1,0 +1,31 @@
+.reservation-show-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  text-align: start;
+
+  .reservation-show-info {
+    width: 50%;
+
+    .reservation-show-dates {
+      display: flex;
+      gap: 30px;
+      margin: 20px 0px;
+    }
+  }
+
+  .reservation-show-car {
+    width: 50%;
+  }
+
+  .reservation-show-status {
+    width: fit-content;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  .reservation-show-owner-coordinates {
+    display: flex;
+    gap: 10px;
+  }
+}

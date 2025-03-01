@@ -1,0 +1,54 @@
+<% car = @reservation.car %>
+<% user = car.user %>
+<% color = "danger" if @reservation.status == "Rejected" %>
+<% color = "success" if @reservation.status == "Accepted" %>
+<% color = "warning" if @reservation.status == "Pending" %>
+
+<div class="reservation-show-container">
+
+  <div class="reservation-show-info">
+
+    <h2 class="reservation-show-title">Informations de réservation</h2>
+
+    <div class="reservation-show-owner">
+      <h5>Propriétaire : <%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h5>
+
+      <h5>Coordonnées :</h5>
+      <div class="reservation-show-owner-coordinates">
+
+        <div class="reservation-show-owner-text">
+          <h6>Mail</h6>
+          <% if user.phone_number %>
+            <h6>Tel</h6>
+          <% end %>
+        </div>
+        <div class="reservation-show-owner-values">
+          <h6> : <%= user.email %></h6>
+          <% if user.phone_number %>
+            <h6> : <%= user.phone_number %></h6>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="reservation-show-dates">
+      <div class="reservation-show-date-text">
+        <h5>Date de début</h5>
+        <h5>Date de fin</h5>
+      </div>
+      <div class="reservation-show-date-value">
+        <h5><%= @reservation.start_date.strftime('%d %b, %Y')%></h5>
+        <h5><%= @reservation.end_date.strftime('%d %b, %Y') %></h5>
+      </div>
+    </div>
+
+    <div>
+      <h5 class="bg-<%= color %> reservation-show-status"><%= @reservation.status %></h5>
+    </div>
+  </div>
+
+  <div class="reservation-show-car">
+    <%= render "cars/car_card_link", car: car %>
+  </div>
+
+</div>
