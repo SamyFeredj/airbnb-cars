@@ -16,6 +16,10 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
+
   def mycars
     @reservations = Reservation.where(car_id: Car.where(user_id: current_user.id).map { |car| car.id })
   end
