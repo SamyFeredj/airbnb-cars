@@ -1,7 +1,7 @@
-<h1>Liste de mes réservations</h1>
+<h1 class="mt-3">Liste de mes réservations</h1>
 
-<% @reservations.each do |reservation| %>
-  <p><strong>Date de début :</strong> <%= reservation.start_date %></p>
-  <p><strong>Date de fin :</strong> <%= reservation.end_date %></p>
-  <p><strong>Prix total de la réservation :</strong> <%= number_to_currency(reservation.total_price, unit: "€") %></p>
+<div class="reservations-container">
+  <% @reservations.each do |reservation| %>
+    <%= render "reservation_card_link", reservation: reservation %>
   <% end %>
+</div>
