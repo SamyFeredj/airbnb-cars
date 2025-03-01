@@ -1,0 +1,61 @@
+.reservation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black !important;
+  box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.3);
+  border-radius: 10px;
+
+  width: $reservation-card-width;
+  height: $reservation-card-height;
+  padding: $reservation-card-py $reservation-card-px;
+
+  transition: 0.3s ease;
+
+  p {
+    margin: 0px;
+    display: block;
+  }
+
+  .reservation-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    h4 {
+      font-weight: 900;
+    }
+  }
+
+  .reservation-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .reservation-dates-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: 700;
+  }
+
+  .reservation-price {
+    flex-grow: 1;
+    text-align: end;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .reservation-location {
+    text-align: start;
+    margin: 10px 0px;
+  }
+
+  &:hover {
+    scale: 1.03;
+  }
+}

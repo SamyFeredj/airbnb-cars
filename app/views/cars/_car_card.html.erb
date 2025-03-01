@@ -1,10 +1,8 @@
-<%= link_to car_path(car) do %>
-  <div class="car-card">
-    <%= image_tag car.photo.attached? ? url_for(car.photo) : 'default_car.jpg', alt: car.brand, class: "car-image" %>
-    <div class="car-card-info">
-      <h3><%= car.brand %> - <%= car.car_model %></h3>
-      <p><strong><i class="fa-solid fa-location-dot"></i> </strong> <%= car.car_location %></p>
-      <p><strong><i class="fa-solid fa-euro-sign"></i> </strong> <%= number_to_currency(car.rent_price, unit: "") %> par jour</p>
-    </div>
+<div class="car-card">
+  <%= image_tag car.photo.attached? ? url_for(car.photo) : 'default_car.jpg', alt: car.brand, class: "car-image" %>
+  <div class="car-card-info">
+    <h3><%= car.brand %> - <%= car.car_model %></h3>
+    <p><strong><i class="fa-solid fa-location-dot"></i> </strong> <%= car.car_location %></p>
+    <p><strong><i class="fa-solid fa-euro-sign"></i> </strong> <%= number_to_currency(car.rent_price, unit: "") %> par jour</p>
   </div>
-<% end %>
+</div>
