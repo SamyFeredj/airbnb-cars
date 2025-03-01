@@ -20,6 +20,12 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to reservations_path
+  end
+
   def mycars
     @reservations = Reservation.where(car_id: Car.where(user_id: current_user.id).map { |car| car.id })
   end

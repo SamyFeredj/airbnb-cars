@@ -8,7 +8,12 @@
 
   <div class="reservation-show-info">
 
-    <h2 class="reservation-show-title">Informations de réservation</h2>
+    <div class="reservation-show-info-header">
+      <h2 class="reservation-show-title">Informations de réservation</h2>
+      <% if @reservation.status == "Pending" %>
+        <%= link_to "Annuler", reservation_path(@reservation), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Annuler la réservation ?" } %>
+      <% end %>
+    </div>
 
     <div class="reservation-show-owner">
       <h5>Propriétaire : <%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h5>

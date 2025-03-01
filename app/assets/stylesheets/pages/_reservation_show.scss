@@ -1,11 +1,22 @@
 .reservation-show-container {
   max-width: 1200px;
   margin: 50px auto;
+  gap: 20px;
   display: flex;
   text-align: start;
 
   .reservation-show-info {
     width: 50%;
+
+    .reservation-show-info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        height: fit-content !important;
+      }
+    }
 
     .reservation-show-dates {
       display: flex;
