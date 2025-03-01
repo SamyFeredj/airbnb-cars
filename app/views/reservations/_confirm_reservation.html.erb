@@ -1,0 +1,8 @@
+<% if reservation.status == "Pending" && other == "Locataire"%>
+  <%= simple_form_for(reservation, html: {style: "background-color: transparent; box-shadow: none; padding: 20px 0px;"}) do |f| %>
+    <div class="d-flex justify-space-between flex-column gap-4" style="width: 100px;">
+      <%= f.submit  name: "status", value: "Accepter", class: "btn btn-success ms-0" %>
+      <%= f.submit  name: "status", value: "Refuser", class: "btn btn-danger" %>
+    </div>
+  <% end %>
+<% end %>

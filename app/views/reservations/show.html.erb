@@ -1,5 +1,4 @@
 <% car = @reservation.car %>
-<% user = car.user %>
 <% color = "danger" if @reservation.status == "Rejected" %>
 <% color = "success" if @reservation.status == "Accepted" %>
 <% color = "warning" if @reservation.status == "Pending" %>
@@ -9,32 +8,18 @@
   <div class="reservation-show-info">
 
     <div class="reservation-show-info-header">
-      <h2 class="reservation-show-title">Informations de réservation</h2>
-      <% if @reservation.status == "Pending" %>
-        <%= link_to "Annuler", reservation_path(@reservation), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Annuler la réservation ?" } %>
+      <% if current_user.id != car.user_id %>
+        <% user = car.user %>
+        <% other = "Propriétaire" %>
+      <% elsif current_user.id == car.user_id %>
+        <% user = User.find(@reservation.user_id) %>
+        <% other = "Locataire" %>
       <% end %>
-    </div>
 
-    <div class="reservation-show-owner">
-      <h5>Propriétaire : <%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h5>
-
-      <h5>Coordonnées :</h5>
-      <div class="reservation-show-owner-coordinates">
-
-        <div class="reservation-show-owner-text">
-          <h6>Mail</h6>
-          <% if user.phone_number %>
-            <h6>Tel</h6>
-          <% end %>
-        </div>
-        <div class="reservation-show-owner-values">
-          <h6> : <%= user.email %></h6>
-          <% if user.phone_number %>
-            <h6> : <%= user.phone_number %></h6>
-          <% end %>
-        </div>
-      </div>
-    </div>
+      <%= render "user_information_reservation",
+          user: user,
+          reservation: @reservation,
+          other: other %>
 
     <div class="reservation-show-dates">
       <div class="reservation-show-date-text">
@@ -50,6 +35,9 @@
     <div>
       <h5 class="bg-<%= color %> reservation-show-status"><%= @reservation.status %></h5>
     </div>
+
+    <%= render "confirm_reservation", reservation: @reservation, other: other %>
+
   </div>
 
   <div class="reservation-show-car">
