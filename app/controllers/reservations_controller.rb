@@ -26,6 +26,17 @@ class ReservationsController < ApplicationController
     redirect_to reservations_path
   end
 
+  def update
+    status = {"Accepter": "Accepted", "Refuser": "Rejected"}
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update(status: status[params["status"].to_sym])
+      redirect_to reservation_path(@reservation)
+    else
+      redirect_to reservation_path(@reservation)
+    end
+  end
+
+
   def mycars
     @reservations = Reservation.where(car_id: Car.where(user_id: current_user.id).map { |car| car.id })
   end
