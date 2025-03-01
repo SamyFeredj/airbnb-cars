@@ -1,4 +1,4 @@
-<div class="car-show-container">
+<div class="car-show-container mb-5">
   <% if @car.photo.attached? %>
     <%= image_tag @car.photo, class: "car-image" %>
   <% end %>
@@ -12,4 +12,7 @@
   </div>
 
   <%= link_to "Retour à la liste", cars_path, class: "my-btn" %>
+</div>
+<div class="container mb-5">
+  <%= render "reservations/reservation_form", reservation: @reservation, car: @car %>
 </div>
