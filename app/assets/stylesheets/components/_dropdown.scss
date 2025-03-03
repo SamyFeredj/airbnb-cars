@@ -1,11 +1,18 @@
+$animation-duration: 400ms;
+
 .user-profile-dropdown {
-  display: none;
-  height: $dropdown-height;
+  // animation
+  display: grid;
+  transition: $animation-duration ease-in-out;
+  grid-template-rows: 0fr;
+  ul {
+    overflow: hidden;
+  }
+  //
   width: $dropdown-width;
   position: absolute;
   top: calc(2*#{$navbar-py} + #{$user-avatar-size});
   right: 0;
-  transition: 0.3s ease;
   z-index: 10;
 
   li {
@@ -28,5 +35,5 @@
 }
 
 .user-profile-clicked {
-  display: block;
+  grid-template-rows: 1fr;
 }
