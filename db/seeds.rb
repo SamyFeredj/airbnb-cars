@@ -5,6 +5,7 @@ require 'date'
 # Cleaning database
 print "Cleaning database..."
 if Rails.env == "development"
+  Review.destroy_all
   Reservation.destroy_all
   Car.destroy_all
   User.destroy_all
@@ -88,8 +89,26 @@ puts " OK !"
 #
 puts " ====================== "
 #
+# ===== REVIEWS
+print "Creating review 1..."
+review1 = Review.new(reservation_id: reservation2.id, rating: 4, content: "Super expérience! Voiture en très bon état et service au top")
+review1.save!
+puts " OK !"
+# ==
+print "Creating review 2..."
+review2 = Review.new(reservation_id: reservation2.id, rating: 2, content: "La voiture n'était pas dans un très bon état. À ce prix là, on s'attend à une qualité supérieur... Je suis un peu déçu")
+review2.save!
+puts " OK !"
+#
+print "Creating review 3..."
+review3 = Review.new(reservation_id: reservation2.id, rating: 3, content: "Une expérience conforme à mes attentes. Je recommande!")
+review3.save!
+puts " OK !"
+puts " ====================== "
+#
 # End of database generation
 puts "End of generation of database"
 puts "#{Car.count} cars generated"
 puts "#{User.count} users generated"
 puts "#{Reservation.count} reservations generated"
+puts "#{Review.count} reviews generated"
