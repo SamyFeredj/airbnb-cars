@@ -1,0 +1,6 @@
+<h1>Laissez un avis</h1>
+<%= simple_form_for [@reservation, @review] do |f| %>
+  <%= f.input :rating, collection: [0,1,2,3,4,5] %>
+  <%= f.input :content %>
+  <%= f.submit "Publiez votre avis", class: "btn btn-primary" %>
+<% end %>
