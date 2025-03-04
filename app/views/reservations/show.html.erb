@@ -45,3 +45,22 @@
   </div>
 
 </div>
+
+<% if @reservation.status == "Accepted" && @reservation.end_date <= Date.today %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= render "reviews/form", reservation: @reservation, review: @review %>
+    </div>
+    <div class="col-6">
+      <h1>Avis</h1>
+      <ul class="list-group">
+        <% @reservation.reviews.each do |review| %>
+          <li class="list-group-item"><%= review.content %> (Rating: <%= review.rating %>/5)</li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<% else %>
+<% end %>
