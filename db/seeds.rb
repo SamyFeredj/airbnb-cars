@@ -113,7 +113,7 @@ car10.save!
 puts " OK !"
 
 puts " ====================== "
-puts "10 cars successfully created!"
+
 
 #
 # ===== RESERVATIONS
