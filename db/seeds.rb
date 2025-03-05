@@ -4,7 +4,7 @@ require 'date'
 
 # Cleaning database
 print "Cleaning database..."
-if Rails.env == "development"
+if Rails.env == "development" || Rails.env == "production" # TODO : TEMPORAIRE
   Review.destroy_all
   Reservation.destroy_all
   Car.destroy_all
