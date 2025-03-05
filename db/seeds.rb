@@ -16,6 +16,13 @@ puts " OK !"
 img_car1 = "https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 img_car2 = "https://images.unsplash.com/photo-1506610654-064fbba4780c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 img_car3 = "https://images.unsplash.com/photo-1594502225401-a9eab8b405dd?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+img_car4 = "https://hips.hearstapps.com/hmg-prod/images/2025-tesla-model-s-1-672d42e172407.jpg?crop=0.465xw:0.466xh;0.285xw,0.361xh&resize=2048:*"
+img_car5 = "https://autotijd.be/images/bmw/2020/x5/prijzen/bmw-x5-2020-prijzen-01.jpg"
+img_car6 = "https://i.gaw.to/vehicles/photos/40/22/402264-2021-audi-a6.jpg?1024x640"
+img_car7 = "https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/2024/Products/992-II/0840_nevada_coupe_u-crane_AKOS0607_edit_V03-sky.jpg/jcr:content/0840_nevada_coupe_u-crane_AKOS0607_edit_V03-sky.jpg"
+img_car8 = "https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/cars/mercedes/c-class/mercedes--classe-c-berline--2021/mercedes--classe-c-berline--2021-m-1.jpg"
+img_car9 = "https://cdn-drivek-datak.motork.net/configurator-imgs/cars/fr/Original/PEUGEOT/308/40435_HATCHBACK-5-DOORS/peugeot-308-2021-side-front.jpg"
+img_car10 = "https://cdn.motor1.com/images/mgl/kNREB/s1/lamborghini-huracan-sto.webp"
 #
 #
 #
@@ -46,24 +53,68 @@ puts " ====================== "
 #
 # ===== CARS
 print "Creating car 1..."
-car1 = Car.new(brand: "Jaguer", car_model: "M4 Hybrid", car_location: "Trocadero - PARIS", rent_price: 200, kilometers: 2_000, release_year: 2025, user_id: samy.id)
+car1 = Car.new(brand: "Jaguar", car_model: "M4 Hybrid", car_location: "Trocadero - PARIS", rent_price: 200, kilometers: 2_000, release_year: 2025, user_id: samy.id)
 car1.photo.attach(io: URI.open(img_car1), filename: 'car1.png', content_type: 'image/png')
 car1.save!
 puts " OK !"
-# ==
+
 print "Creating car 2..."
 car2 = Car.new(brand: "Ford", car_model: "Mustang", car_location: "Los Angeles - USA", rent_price: 180, kilometers: 25_000, release_year: 2025, user_id: arli.id)
 car2.photo.attach(io: URI.open(img_car2), filename: 'car2.png', content_type: 'image/png')
 car2.save!
 puts " OK !"
-# ==
+
 print "Creating car 3..."
 car3 = Car.new(brand: "Renault", car_model: "Capture", car_location: "Angers", rent_price: 50, kilometers: 257_000, release_year: 2024, user_id: samy.id)
 car3.photo.attach(io: URI.open(img_car3), filename: 'car3.png', content_type: 'image/png')
 car3.save!
 puts " OK !"
-#
+
+print "Creating car 4..."
+car4 = Car.new(brand: "Tesla", car_model: "Model S", car_location: "San Francisco - USA", rent_price: 250, kilometers: 12_000, release_year: 2023, user_id: arli.id)
+car4.photo.attach(io: URI.open(img_car4), filename: 'car4.png', content_type: 'image/png')
+car4.save!
+puts " OK !"
+
+print "Creating car 5..."
+car5 = Car.new(brand: "BMW", car_model: "X5", car_location: "Berlin - Germany", rent_price: 170, kilometers: 85_000, release_year: 2022, user_id: arli.id)
+car5.photo.attach(io: URI.open(img_car5), filename: 'car5.png', content_type: 'image/png')
+car5.save!
+puts " OK !"
+
+print "Creating car 6..."
+car6 = Car.new(brand: "Audi", car_model: "A6", car_location: "Milan - Italy", rent_price: 160, kilometers: 45_000, release_year: 2021, user_id: arli.id)
+car6.photo.attach(io: URI.open(img_car6), filename: 'car6.png', content_type: 'image/png')
+car6.save!
+puts " OK !"
+
+print "Creating car 7..."
+car7 = Car.new(brand: "Porsche", car_model: "911 Carrera", car_location: "Monaco", rent_price: 320, kilometers: 8_000, release_year: 2024, user_id: arli.id)
+car7.photo.attach(io: URI.open(img_car7), filename: 'car7.png', content_type: 'image/png')
+car7.save!
+puts " OK !"
+
+print "Creating car 8..."
+car8 = Car.new(brand: "Mercedes", car_model: "C-Class", car_location: "Brussels - Belgium", rent_price: 140, kilometers: 60_000, release_year: 2020, user_id: arli.id)
+car8.photo.attach(io: URI.open(img_car8), filename: 'car8.png', content_type: 'image/png')
+car8.save!
+puts " OK !"
+
+print "Creating car 9..."
+car9 = Car.new(brand: "Peugeot", car_model: "308", car_location: "Lyon - France", rent_price: 70, kilometers: 110_000, release_year: 2019, user_id: arli.id)
+car9.photo.attach(io: URI.open(img_car9), filename: 'car9.png', content_type: 'image/png')
+car9.save!
+puts " OK !"
+
+print "Creating car 10..."
+car10 = Car.new(brand: "Lamborghini", car_model: "Huracan", car_location: "Dubai - UAE", rent_price: 500, kilometers: 5_000, release_year: 2024, user_id: arli.id)
+car10.photo.attach(io: URI.open(img_car10), filename: 'car10.png', content_type: 'image/png')
+car10.save!
+puts " OK !"
+
 puts " ====================== "
+puts "10 cars successfully created!"
+
 #
 # ===== RESERVATIONS
 print "Creating reservation 1..."
