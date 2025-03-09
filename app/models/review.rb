@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
   belongs_to :reservation
 
+  AUTHORIZED_RATINGS = (1..5)
+
   validates :content, presence: true
-  validates :rating, presence: true, inclusion: { in: [0,1,2,3,4,5], allow_nil: false }, numericality: { only_integer: true }
+  validates :rating, presence: true, inclusion: { in: AUTHORIZED_RATINGS }
 end
