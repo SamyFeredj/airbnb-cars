@@ -35,17 +35,17 @@ samy.save!
 puts " OK !"
 #
 print "Creating user 2..."
-arli = User.new(email: "arli@outlook.fr", password: "password", first_name: "arli", last_name: "sefgjini", phone_number: "1234556789")
+arli = User.new(email: "arli@outlook.fr", password: "password", first_name: "arli", last_name: "sefgjini", phone_number: "0145567869")
 arli.save!
 puts " OK !"
 #
 print "Creating user 3..."
-laurent = User.new(email: "laurent@gmail.com", password: "password", first_name: "laurent", last_name: "millet", phone_number: "3456789123")
+laurent = User.new(email: "laurent@gmail.com", password: "password", first_name: "laurent", last_name: "millet", phone_number: "0148628923")
 laurent.save!
 puts " OK !"
 #
 print "Creating user 4..."
-marcus = User.new(email: "marcus@yahoo.fr", password: "password", first_name: "marcus", last_name: "meyer", phone_number: "9876543210")
+marcus = User.new(email: "marcus@yahoo.fr", password: "password", first_name: "marcus", last_name: "meyer", phone_number: "0187654210")
 marcus.save!
 puts " OK !"
 #
@@ -53,7 +53,7 @@ puts " ====================== "
 #
 # ===== CARS
 print "Creating car 1..."
-car1 = Car.new(brand: "Jaguar", car_model: "M4 Hybrid", car_location: "Trocadero - PARIS", rent_price: 200, kilometers: 2_000, release_year: 2025, user_id: samy.id)
+car1 = Car.new(brand: "Jaguar", car_model: "M4 Hybrid", car_location: "Paris - France", rent_price: 200, kilometers: 2_000, release_year: 2025, user_id: samy.id)
 car1.photo.attach(io: URI.open(img_car1), filename: 'car1.png', content_type: 'image/png')
 car1.save!
 puts " OK !"
@@ -65,7 +65,7 @@ car2.save!
 puts " OK !"
 
 print "Creating car 3..."
-car3 = Car.new(brand: "Renault", car_model: "Capture", car_location: "Angers", rent_price: 50, kilometers: 257_000, release_year: 2024, user_id: samy.id)
+car3 = Car.new(brand: "Renault", car_model: "Capture", car_location: "Angers - France", rent_price: 50, kilometers: 257_000, release_year: 2024, user_id: samy.id)
 car3.photo.attach(io: URI.open(img_car3), filename: 'car3.png', content_type: 'image/png')
 car3.save!
 puts " OK !"
@@ -77,25 +77,25 @@ car4.save!
 puts " OK !"
 
 print "Creating car 5..."
-car5 = Car.new(brand: "BMW", car_model: "X5", car_location: "Berlin - Germany", rent_price: 170, kilometers: 85_000, release_year: 2022, user_id: arli.id)
+car5 = Car.new(brand: "BMW", car_model: "X5", car_location: "Berlin - Allemagne", rent_price: 170, kilometers: 85_000, release_year: 2022, user_id: arli.id)
 car5.photo.attach(io: URI.open(img_car5), filename: 'car5.png', content_type: 'image/png')
 car5.save!
 puts " OK !"
 
 print "Creating car 6..."
-car6 = Car.new(brand: "Audi", car_model: "A6", car_location: "Milan - Italy", rent_price: 160, kilometers: 45_000, release_year: 2021, user_id: arli.id)
+car6 = Car.new(brand: "Audi", car_model: "A6", car_location: "Milan - Italie", rent_price: 160, kilometers: 45_000, release_year: 2021, user_id: arli.id)
 car6.photo.attach(io: URI.open(img_car6), filename: 'car6.png', content_type: 'image/png')
 car6.save!
 puts " OK !"
 
 print "Creating car 7..."
-car7 = Car.new(brand: "Porsche", car_model: "911 Carrera", car_location: "Monaco", rent_price: 320, kilometers: 8_000, release_year: 2024, user_id: arli.id)
+car7 = Car.new(brand: "Porsche", car_model: "911 Carrera", car_location: "Monaco - Monaco", rent_price: 320, kilometers: 8_000, release_year: 2024, user_id: arli.id)
 car7.photo.attach(io: URI.open(img_car7), filename: 'car7.png', content_type: 'image/png')
 car7.save!
 puts " OK !"
 
 print "Creating car 8..."
-car8 = Car.new(brand: "Mercedes", car_model: "C-Class", car_location: "Brussels - Belgium", rent_price: 140, kilometers: 60_000, release_year: 2020, user_id: arli.id)
+car8 = Car.new(brand: "Mercedes", car_model: "C-Class", car_location: "Bruxelles - Belgique", rent_price: 140, kilometers: 60_000, release_year: 2020, user_id: arli.id)
 car8.photo.attach(io: URI.open(img_car8), filename: 'car8.png', content_type: 'image/png')
 car8.save!
 puts " OK !"
