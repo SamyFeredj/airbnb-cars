@@ -13,6 +13,20 @@
 @import "users/index";
 @import "cars/index";
 
+html,
+body {
+  height: fit-content;
+  min-height: 100vh;
+  font-family: $body-font !important;
+  font-style: normal;
+}
+
 body {
   background-color: $clr-bg;
+
+  // CORRECTION BUG FOOTER
+  // c'est potentiellement dangereux je ne sais pas ?
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
