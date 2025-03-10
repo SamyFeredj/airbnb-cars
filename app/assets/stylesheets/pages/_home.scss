@@ -1,11 +1,4 @@
 // Specific CSS for your home-page
-html,
-body {
-  height: 100vh;
-  font-family: $body-font !important;
-  font-style: normal;
-}
-
 .home-page-container {
   width: clamp(auto, 90%, 800px);
   background-color: $clr-bg;

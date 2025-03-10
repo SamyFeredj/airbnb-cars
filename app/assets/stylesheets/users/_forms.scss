@@ -1,7 +1,6 @@
 .container-user {
   background-color: $clr-bg;
   color: $clr-light;
-  height: 100%;
 
   h2 {
     font-weight: 800;
@@ -9,9 +8,6 @@
 
   form {
     background-color: $clr-bg;
-    // display: flex;
-    // justify-content: space-evenly;
-    // border: 1px solid $clr-secondary;
     border: none;
     box-shadow: none;
     border-radius: 0px;
@@ -45,8 +41,13 @@
 
 
 #edit-user {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+
+  form {
+    margin-bottom: 0px;
+  }
 
   button {
     border: none;
