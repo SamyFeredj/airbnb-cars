@@ -20,4 +20,10 @@
       height: 75px;
     }
   }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
 }

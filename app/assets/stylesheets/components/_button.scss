@@ -1,0 +1,36 @@
+.our-btn {
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 2px;
+  transition: all 0.5s ease;
+}
+
+.our-btn-default {
+  background-color: $clr-bg;
+
+  &:hover {
+    background-color: #1a1a1a;
+  }
+}
+
+
+.our-btn-success {
+  color: $clr-bg;
+  background-color: $clr-secondary;
+
+  &:hover {
+    color: $clr-secondary;
+    background-color: $clr-bg;
+  }
+}
+
+.our-btn-danger {
+  background-color: $clr-main;
+  color: $clr-bg;
+
+  &:hover {
+    background-color: $clr-bg;
+    color: $clr-main;
+  }
+}
