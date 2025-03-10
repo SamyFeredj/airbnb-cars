@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+  a {
+    text-decoration: none !important;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+.cars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+
+  a {
+    width: fit-content;
+  }
+}
+
+.reservations-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 0px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+
+  a {
+    width: fit-content;
+  }
+}

@@ -1,3 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>coucou from samy</p>
+<div class="home-page-container">
+  <div class="home-page-welcome" style="background-image: url(<%= image_path(@car.photo.key) %>)">
+    <div class="home-page-text">
+      <h1>Lorem, ipsum dolor.</h1>
+      <h3>Itaque, iusto!</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit tempora. Amet, mollitia sunt, iste laboriosam eum corporis placeat impedit atque perspiciatis nisi, illo nostrum voluptas. Impedit ipsum ipsa veritatis totam ab quasi aspernatur. Ut culpa cum commodi repudiandae nam!</p>
+    </div>
+    <%= link_to "Browse cars", cars_path, id: "home-to-index" %>
+  </div>
+</div>

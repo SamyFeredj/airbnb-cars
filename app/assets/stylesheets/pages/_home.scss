@@ -1,42 +1,54 @@
 // Specific CSS for your home-page
+html,
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  text-align: center;
-  a {
-    text-decoration: none !important;
+  height: 100%;
+}
+
+$clr-bg: #121212;
+$clr-main: #A6192E;
+$clr-secondary: #E1C16E;
+$clr-middle: #B0B0B0;
+$clr-light: #FFFFFF;
+
+.home-page-container {
+  width: clamp(auto, 90%, 800px);
+  height: 100%;
+  margin: 0 auto;
+  background-color: $clr-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page-welcome {
+  height: 400px;
+  width: 700px;
+  background-color: $clr-secondary;
+  clip-path: path("M 0,0 L 700,0 \
+                  L 700, 315 A 10,10 0,0,1 690, 325 \
+                  L 510, 325 A 10,10 0,0,0 500 335 \
+                  L 500, 390 A 10,10 0,0,1 490, 400 \
+                  L 0, 400 L 0, 0 Z");
+  border-radius: 10px;
+  position: relative;
+  * {
+    margin: 0;
+    padding: 0;
   }
 }
 
-.title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #007BFF;
+.home-page-text {
+  background-color: red;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 10px;
 }
 
-.cars-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-
-  a {
-    width: fit-content;
-  }
-}
-
-.reservations-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 0px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-
-  a {
-    width: fit-content;
-  }
+#home-to-index {
+  position: absolute;
+  right: 0;
+  display: none;
 }
