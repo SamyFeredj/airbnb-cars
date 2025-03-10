@@ -1,4 +1,12 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .footer-basic {
+  // position: relative;
+  margin-top: auto;
+  width: 100%;
   padding:40px 0;
   background-color:#ffffff;
   color:#4b4c4d;
@@ -8,7 +16,7 @@
   padding:0;
   list-style:none;
   text-align:center;
-  font-size:18px;
+  font-size:14px;
   line-height:1.6;
   margin-bottom:0;
 }
