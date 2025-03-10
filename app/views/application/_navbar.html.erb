@@ -70,28 +70,18 @@
 
     <div class="navbar-links">
       <ul>
-        <li> <%= link_to "Louer", cars_path, class: "our-btn our-btn-default" %> </li>
+        <li> <%= link_to "Parcourir", cars_path, class: "our-btn our-btn-default" %> </li>
         <li> <%= link_to "Mes réservations", reservations_path, class: "our-btn our-btn-default" %> </li>
         <li> <%= link_to "Mes locations", mycars_reservations_path, class: "our-btn our-btn-default" %> </li>
+        <li> <%= link_to "Ajouter une voiture", new_car_path, class: "our-btn our-btn-default" %> </li>
       </ul>
     </div>
 
-    <div class="user-profile" data-controller="toggle">
-      <%= image_tag current_user.picture_url || "photo-avatar-profil.png", class: "user-profile-avatar", data: {action: "click->toggle#toggleDropdown"} %>
+    <div class="user-profile">
+      <%= link_to edit_user_registration_path do %>
+        <%= image_tag current_user.picture_url || "photo-avatar-profil.png", class: "user-profile-avatar" %>
+      <% end %>
     </div>
-
-    <% if false %> <%# TODO : A RETIRER %>
-      <div class="user-profile-dropdown" data-toggle-target="dropdown">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= link_to "Mon profile", edit_user_registration_path %></li>
-          <li class="list-group-item"><%= link_to "Mes réservations", reservations_path %></li>
-          <li class="list-group-item"><%= link_to "Mes locations", mycars_reservations_path %></li>
-          <li class="list-group-item"><%= link_to "Ajouter une voiture", new_car_path %></li>
-          <li class="list-group-item"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %></li>
-        </ul>
-      </div>
-    <% end %>
-
 
   <% else %>
     <div class="authentication-btns">
