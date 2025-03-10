@@ -64,18 +64,23 @@
         </filter>
         </defs>
       </svg>
-
     <% end %>
   </div>
   <% if user_signed_in? %>
-    <% if false %>
-      TODO : Il faut trouver un moyen d'afficher le bienvenue seulement
-      une seule fois, et que ça apparaisse en tant que message subtile, je crois
-      que c'est possible via une méthode dans le controller
-    <% end %>
-    <%# <p>Bienvenue, <%= current_user.email !</p>%>
+
+    <div class="navbar-links">
+      <ul>
+        <li> <%= link_to "Louer", cars_path, class: "our-btn our-btn-default" %> </li>
+        <li> <%= link_to "Mes réservations", reservations_path, class: "our-btn our-btn-default" %> </li>
+        <li> <%= link_to "Mes locations", mycars_reservations_path, class: "our-btn our-btn-default" %> </li>
+      </ul>
+    </div>
+
     <div class="user-profile" data-controller="toggle">
       <%= image_tag current_user.picture_url || "photo-avatar-profil.png", class: "user-profile-avatar", data: {action: "click->toggle#toggleDropdown"} %>
+    </div>
+
+    <% if false %> <%# TODO : A RETIRER %>
       <div class="user-profile-dropdown" data-toggle-target="dropdown">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= link_to "Mon profile", edit_user_registration_path %></li>
@@ -85,11 +90,13 @@
           <li class="list-group-item"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %></li>
         </ul>
       </div>
-    </div>
+    <% end %>
+
+
   <% else %>
     <div class="authentication-btns">
-      <%= link_to "Connexion", new_user_session_path, class: "my-btn btn-primary mt-0" %>
-      <%= link_to "S'inscrire", new_user_registration_path, class: "my-btn btn-secondary mt-0" %>
+      <%= link_to "Connexion", new_user_session_path, class: "our-btn our-btn-default mt-0" %>
+      <%= link_to "S'inscrire", new_user_registration_path, class: "our-btn our-btn-default mt-0" %>
     </div>
   <% end %>
 </nav>
