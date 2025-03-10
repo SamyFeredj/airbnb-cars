@@ -14,5 +14,7 @@
   <%= link_to "Retour à la liste", cars_path, class: "my-btn" %>
 </div>
 <div class="container mb-5">
-  <%= render "reservations/reservation_form", reservation: @reservation, car: @car %>
+  <% if @car.user_id != current_user.id %>
+    <%= render "reservations/reservation_form", reservation: @reservation, car: @car %>
+  <% end %>
 </div>
