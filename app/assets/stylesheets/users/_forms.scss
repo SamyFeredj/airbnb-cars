@@ -42,3 +42,30 @@
     color: $clr-light;
   }
 }
+
+
+#edit-user {
+  display: flex;
+  justify-content: space-evenly;
+
+  button {
+    border: none;
+  }
+
+  .user-other {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .button_to {
+    margin: 0;
+  }
+
+  .delete-account {
+    display: flex;
+    flex-direction: column;
+  }
+}
