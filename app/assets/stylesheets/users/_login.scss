@@ -1,0 +1,44 @@
+.container-user {
+  background-color: $clr-bg;
+  color: $clr-light;
+  height: 100%;
+
+  h2 {
+    font-weight: 800;
+  }
+
+  form {
+    background-color: $clr-bg;
+    // display: flex;
+    // justify-content: space-evenly;
+    // border: 1px solid $clr-secondary;
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    margin: 20px auto;
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-inputs {
+    color: $clr-secondary;
+    text-align: left;
+  }
+
+  .form-control:focus,
+  .form-check-input:focus {
+    border-color: $clr-secondary;
+    box-shadow: 0 0 0 0.25rem $clr-secondary;
+  }
+
+  input[type="checkbox"] {
+    accent-color: $clr-secondary;
+  }
+
+  .form-text {
+    color: $clr-light;
+  }
+}
