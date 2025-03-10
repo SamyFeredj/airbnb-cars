@@ -6,12 +6,6 @@ body {
   font-style: normal;
 }
 
-$clr-bg: #121212;
-$clr-main: #A6192E;
-$clr-secondary: #E1C16E;
-$clr-middle: #B0B0B0;
-$clr-light: #FFFFFF;
-
 .home-page-container {
   width: clamp(auto, 90%, 800px);
   background-color: $clr-bg;
