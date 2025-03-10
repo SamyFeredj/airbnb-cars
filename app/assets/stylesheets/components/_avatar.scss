@@ -23,6 +23,5 @@
   width: $user-avatar-size;
   height: $user-avatar-size;
   border-radius: 50%;
-  margin-right: calc(#{$dropdown-width}/2 - #{$navbar-px} - #{$user-avatar-size}/2);
   cursor: pointer;
 }
