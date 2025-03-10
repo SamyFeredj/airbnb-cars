@@ -1,10 +1,9 @@
 <div class="home-page-container">
-  <div class="home-page-welcome" style="background-image: url(<%= image_path(@car.photo.key) %>)">
+  <div class="home-page-welcome" style="background-image: url(<%= cl_image_path(@car.photo.key) %>)">
     <div class="home-page-text">
-      <h1>Lorem, ipsum dolor.</h1>
-      <h3>Itaque, iusto!</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit tempora. Amet, mollitia sunt, iste laboriosam eum corporis placeat impedit atque perspiciatis nisi, illo nostrum voluptas. Impedit ipsum ipsa veritatis totam ab quasi aspernatur. Ut culpa cum commodi repudiandae nam!</p>
+      <h1>CAR B&B</h1>
+      <h3>Louez l'Excellence, Roulez le Rêve</h3>
+      <p>Découvrez une sélection exclusive de voitures de prestige, alliant élégance, puissance et raffinement. Que ce soit pour un événement spécial, un voyage d'affaires ou simplement pour le plaisir de conduire l'exception, Car B&B vous offre une expérience unique. Réservez en toute simplicité et prenez le volant de l'extraordinaire. </p>
     </div>
-    <%= link_to "Browse cars", cars_path, id: "home-to-index" %>
   </div>
 </div>

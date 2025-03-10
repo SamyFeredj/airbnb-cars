@@ -1,7 +1,9 @@
 // Specific CSS for your home-page
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  font-family: $body-font !important;
+  font-style: normal;
 }
 
 $clr-bg: #121212;
@@ -12,9 +14,9 @@ $clr-light: #FFFFFF;
 
 .home-page-container {
   width: clamp(auto, 90%, 800px);
+  background-color: $clr-bg;
   height: 100%;
   margin: 0 auto;
-  background-color: $clr-bg;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,14 +25,15 @@ $clr-light: #FFFFFF;
 .home-page-welcome {
   height: 400px;
   width: 700px;
-  background-color: $clr-secondary;
+  position: relative;
+  background-position: center;
+  background-size: cover;
   clip-path: path("M 0,0 L 700,0 \
                   L 700, 315 A 10,10 0,0,1 690, 325 \
                   L 510, 325 A 10,10 0,0,0 500 335 \
                   L 500, 390 A 10,10 0,0,1 490, 400 \
                   L 0, 400 L 0, 0 Z");
   border-radius: 10px;
-  position: relative;
   * {
     margin: 0;
     padding: 0;
@@ -38,17 +41,33 @@ $clr-light: #FFFFFF;
 }
 
 .home-page-text {
-  background-color: red;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
-  padding: 10px;
-}
+  padding: 30px;
+  color: $clr-light;
+  background: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.8));
+  h1 {
+    margin: 1rem 0rem;
+    letter-spacing: 5px;
+  }
 
-#home-to-index {
-  position: absolute;
-  right: 0;
-  display: none;
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    text-align: left;
+    width: 60%;
+    font-size: 14px;
+    line-height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      backdrop-filter: blur(5px);
+    }
+  }
 }
