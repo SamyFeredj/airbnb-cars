@@ -1,7 +1,11 @@
+#new_reservation {
+  background: #B0B0B0;
+}
+
 .car-show-container {
   max-width: 800px;
   margin: auto;
-  background: white;
+  background: #B0B0B0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -26,23 +30,43 @@
   margin-bottom: 10px;
 }
 
-.car-location, .car-price {
+.car-location, .car-price, .car-kilometers, .car-year {
   font-size: 1.2rem;
-  color: #666;
+  color: black;
   margin-bottom: 10px;
 }
 
-.my-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 15px;
-  background-color: #007BFF;
-  color: white;
+.back-arrow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  color: black;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+
+  i {
+    font-size: 18px;
+  }
 
   &:hover {
-    background-color: #0056b3;
+    color: #E1C16E; // Devient bleu au survol
   }
+}
+
+
+.car-reservation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; // Espacement entre la carte et le formulaire
+  max-width: 1200px; // Pour éviter que les éléments soient trop larges
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.car-show-container {
+  flex: 1;
+  max-width: 55%; // La carte prend un peu plus d'espace
 }
