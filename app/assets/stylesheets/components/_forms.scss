@@ -1,6 +1,12 @@
 .container-form {
   background-color: $clr-bg;
   color: $clr-light;
+  margin: 0 auto;
+  width: fit-content;
+  h1 {
+    color: #E1C16E;
+    margin-left: 20px;
+  }
 
   h2 {
     font-weight: 800;

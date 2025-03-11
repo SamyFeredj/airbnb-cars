@@ -1,8 +1,10 @@
 <!-- app/views/cars/index.html.erb -->
-<h1 class="mt-5">Liste des voitures</h1>
+<div class="our-container">
+  <h1>Découvrez des voitures d'exception</h1>
 
-<div class="cars-container">
-  <% @cars.each do |car| %>
-    <%= render "car_card_link", car: car %>
-  <% end %>
+  <div class="cars-container">
+    <% @cars.each do |car| %>
+      <%= render "car_card_link", car: car %>
+    <% end %>
+  </div>
 </div>

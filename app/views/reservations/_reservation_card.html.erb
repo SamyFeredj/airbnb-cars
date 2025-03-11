@@ -1,22 +1,27 @@
-<div class="reservation-container">
-  <% car = reservation.car %>
-  <div class="reservation-title">
-    <h4><%= car.brand %> - <%= car.car_model %></h4>
-  </div>
-  <div class="reservation-location">
-    <p><strong><i class="fa-solid fa-location-dot"></i> </strong> <%= car.car_location %></p>
-  </div>
-  <div class="reservation-info">
-    <div class="reservation-dates-text">
-      <p><span class="reservation-date-text">Date de début</span></p>
-      <p><span class="reservation-date-text">Date de fin</span></p>
+<% car = reservation.car %>
+<div class="reservation-container"
+    style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%),
+                              url(<%= cl_image_path(car.photo.key)%>);">
+  <div class="reservation-card-info">
+    <div class="reservation-title">
+      <h4><%= car.brand %> - <%= car.car_model %></h4>
     </div>
-    <div class="reservation-dates">
-      <p> <%= reservation.start_date.strftime('%d %b, %Y')%></p>
-      <p> <%= reservation.end_date.strftime('%d %b, %Y') %></p>
+    <div class="reservation-location">
+      <p><strong><i class="fa-solid fa-location-dot"></i> </strong> <%= car.car_location %></p>
     </div>
-    <div class="reservation-price">
-      <p><strong><i class="fa-solid fa-euro-sign"></i> </strong> <%= number_to_currency(reservation.total_price, unit: "") %></p>
+    <div class="reservation-info">
+      <div class="reservation-dates-text">
+        <p><span class="reservation-date-text">Date de début</span></p>
+        <p><span class="reservation-date-text">Date de fin</span></p>
+      </div>
+      <div class="reservation-dates">
+        <p> <%= reservation.start_date.strftime('%d %b, %Y')%></p>
+        <p> <%= reservation.end_date.strftime('%d %b, %Y') %></p>
+      </div>
+      <div class="reservation-price">
+        <p><strong><i class="fa-solid fa-euro-sign"></i> </strong> <%= number_to_currency(reservation.total_price, unit: "") %></p>
+      </div>
     </div>
   </div>
+
 </div>
