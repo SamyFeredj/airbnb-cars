@@ -53,3 +53,15 @@ input, select, textarea {
     color: #E1C16E; // Devient bleu au survol
   }
 }
+
+#new-car-container {
+  input[type="submit"] {
+    border: none;
+  }
+
+  label {
+    color: $clr-secondary;
+    text-align: left;
+    width: 100%;
+  }
+}
