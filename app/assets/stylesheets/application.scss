@@ -29,4 +29,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  a {
+    text-decoration: none !important;
+  }
+}
+
+.our-container {
+  margin: 0 auto;
+  width: fit-content;
+  flex-grow: 1;
+  h1 {
+    color: #E1C16E;
+    margin-left: 20px;
+  }
 }

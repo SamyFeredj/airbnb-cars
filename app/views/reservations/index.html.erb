@@ -1,7 +1,9 @@
-<h1 class="mt-3">Liste de mes réservations</h1>
+<div class="our-container">
+  <h1>Liste de mes réservations</h1>
 
-<div class="reservations-container">
-  <% @reservations.each do |reservation| %>
-    <%= render "reservation_card_link", reservation: reservation %>
-  <% end %>
+  <div class="reservations-container">
+    <% @reservations.each do |reservation| %>
+      <%= render "reservation_card_link", reservation: reservation %>
+    <% end %>
+  </div>
 </div>
