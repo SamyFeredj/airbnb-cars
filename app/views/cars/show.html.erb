@@ -2,6 +2,8 @@
   <div class="car-show-container">
     <% if @car.photo.attached? %>
       <%= image_tag @car.photo, class: "car-image" %>
+    <% else %>
+      <%= image_tag 'default_car.jpg', class: "car-image" %>
     <% end %>
 
     <div class="car-details">
