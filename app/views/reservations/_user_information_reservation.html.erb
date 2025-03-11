@@ -1,26 +1,27 @@
 <h2 class="reservation-show-title">Informations de réservation</h2>
 
 <% if reservation.status == "Pending" && other == "Propriétaire" %>
-  <%= link_to "Annuler", reservation_path(@reservation), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Annuler la réservation ?" } %>
+  <%= link_to reservation_path(@reservation), id: "annuler-reservation", data: { turbo_method: :delete, turbo_confirm: "Annuler la réservation ?" } do %>
+    <i class="fa-solid fa-circle-xmark"></i>
+  <% end %>
 <% end %>
 </div>
 
 <div class="reservation-show-owner">
-  <h5><%= other %> : <%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h5>
+  <h5 class="mt-5 mb-5"><%= other %> - <span class="gold-text"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></span></h5>
 
-  <h5>Coordonnées :</h5>
   <div class="reservation-show-owner-coordinates">
 
     <div class="reservation-show-owner-text">
-      <h6>Mail</h6>
+      <h6><i class="fa-solid fa-envelope"></i></h6>
       <% if user.phone_number %>
-        <h6>Tel</h6>
+        <h6><i class="fa-solid fa-phone"></i></h6>
       <% end %>
     </div>
     <div class="reservation-show-owner-values">
-      <h6> : <%= user.email %></h6>
+      <h6 class="gold-text">  <%= user.email %></h6>
       <% if user.phone_number %>
-        <h6> : <%= user.phone_number %></h6>
+        <h6 class="gold-text">  <%= user.phone_number %></h6>
       <% end %>
     </div>
   </div>

@@ -1,40 +1,40 @@
-.reservation-show-container {
-  max-width: 1100px;
-  margin: 50px auto;
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.gold-text {
+  color: $clr-secondary;
+}
 
-  &:hover {
-    transform: translateY(-5px);
+.reservation-show-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 20px;
+  display: flex;
+  text-align: start;
+  color: $clr-light;
+
+  .car-card:hover {
+    transform: scale(1.01);
   }
 
-  // Partie gauche: Infos de la réservation
+  #annuler-reservation {
+    width: fit-content !important;
+    font-size: 24px;
+    color: $clr-main;
+    transition: all 0.5s ease;
+
+    &:hover {
+      color: $clr-light;
+    }
+  }
+
   .reservation-show-info {
-    width: 50%;
-    display: flex;
-    background-color: #B0B0B0;
-    flex-direction: column;
-    gap: 5px;
+    width: 70%;
 
     .reservation-show-info-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
 
-      .back-arrow {
-        font-size: 16px;
-        color: black;
-        text-decoration: none;
-        transition: color 0.3s ease-in-out;
-
-        &:hover {
-          color: #007bff;
-        }
+      a {
+        height: fit-content !important;
       }
     }
 
@@ -43,55 +43,20 @@
       gap: 30px;
       margin: 20px 0px;
     }
-
-    .reservation-show-status {
-      width: fit-content;
-      padding: 8px 15px;
-      color: white;
-      border-radius: 5px;
-
-      &.confirmed {
-        background: green;
-      }
-
-      &.pending {
-        background: orange;
-      }
-
-      &.canceled {
-        background: red;
-      }
-    }
-
-    .reservation-show-owner-coordinates {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
   }
 
-}
-// Partie droite: Image de la voiture
-.reservation-show-car {
-  width: 50%;
-  text-align: center;
-
-  .reservation-car-image {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  .reservation-show-car {
+    width: 50%;
   }
 
-  h3 {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: bold;
+  .reservation-show-status {
+    width: fit-content;
+    padding: 10px 20px;
+    color: white;
   }
 
-  p {
-    font-size: 14px;
-    color: #555;
+  .reservation-show-owner-coordinates {
+    display: flex;
+    gap: 10px;
   }
 }

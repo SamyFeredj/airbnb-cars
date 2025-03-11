@@ -3,6 +3,8 @@
 <% color = "success" if @reservation.status == "Accepted" %>
 <% color = "warning" if @reservation.status == "Pending" %>
 
+<% status = {"Rejected": "Rejetée", "Accepted": "Acceptée", "Pending": "En attente"} %>
+
 <div class="reservation-show-container">
 
   <div class="reservation-show-info">
@@ -27,13 +29,13 @@
         <h5>Date de fin</h5>
       </div>
       <div class="reservation-show-date-value">
-        <h5><%= @reservation.start_date.strftime('%d %b, %Y')%></h5>
-        <h5><%= @reservation.end_date.strftime('%d %b, %Y') %></h5>
+        <h5 class="gold-text"><%= @reservation.start_date.strftime('%d %b, %Y')%></h5>
+        <h5 class="gold-text"><%= @reservation.end_date.strftime('%d %b, %Y') %></h5>
       </div>
     </div>
 
     <div>
-      <h5 class="bg-<%= color %> reservation-show-status"><%= @reservation.status %></h5>
+      <h5 class="bg-<%= color %> reservation-show-status"><%= status[@reservation.status.to_sym] %></h5>
     </div>
 
     <%= render "confirm_reservation", reservation: @reservation, other: other %>
