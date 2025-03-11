@@ -39,4 +39,6 @@
   <%= f.submit "Ajouter la voiture", class: "my-btn btn-success mt-3" %>
 <% end %>
 
-<%= link_to "Retour à la liste", cars_path, class: "my-btn btn-secondary mt-3" %>
+<%= link_to cars_path, class: "back-arrow-white" do %>
+     <i class="fa-solid fa-arrow-left"></i> Retour
+    <% end %>

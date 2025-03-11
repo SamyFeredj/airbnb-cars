@@ -7,7 +7,9 @@ body {
     text-decoration: none !important;
   }
 }
-
+h1 {
+  color: #E1C16E;
+}
 .title {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -30,7 +32,7 @@ body {
 .reservations-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px 0px;
+  gap: 20px 17px;
   padding: 20px;
   max-width: 1000px;
   margin: auto;
