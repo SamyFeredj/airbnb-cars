@@ -14,6 +14,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+    @car.user_id = current_user.id
     if @car.save
       redirect_to @car, notice: "Voiture ajoutée avec succès !"
     else
