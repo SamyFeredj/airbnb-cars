@@ -7,11 +7,11 @@
     <% end %>
 
     <div class="car-details">
-      <h1 class="car-title"><%= @car.brand %> - <%= @car.car_model %></h1>
-      <p class="car-location"><strong>Localisation :</strong> <%= @car.car_location %></p>
-      <p class="car-price"><strong>Prix :</strong> <%= number_to_currency(@car.rent_price, unit: "€") %>/jour</p>
-      <p class="car-kilometers"><strong>Kilométrage :</strong> <%= @car.kilometers %> km</p>
-      <p class="car-year"><strong>Année de sortie :</strong> <%= @car.release_year %></p>
+      <h1 class="car-title gold-text"><%= @car.brand %> - <%= @car.car_model %></h1>
+      <p class="car-location"><i class="fa-solid fa-location-dot"></i>  <span class="gold-text ms-3"><%= @car.car_location %></span></p>
+      <p class="car-price"> <i class="fa-solid fa-euro-sign"></i> <span class="gold-text ms-3"><%= number_to_currency(@car.rent_price, unit: "") %></span> / jour</p>
+      <p class="car-kilometers"><i class="fa-solid fa-road"></i> <span class="gold-text ms-2"><%= @car.kilometers %></span> km</p>
+      <p class="car-year"> Fabriquée en <span class="gold-text"><%= @car.release_year %></span></p>
     </div>
 
     <%= link_to cars_path, class: "back-arrow" do %>

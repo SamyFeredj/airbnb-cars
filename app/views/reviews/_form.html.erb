@@ -1,6 +1,6 @@
-<h1>Laissez un avis</h1>
+<h1 class="gold-text mx-0">Laissez un avis</h1>
 <%= simple_form_for [@reservation, @review] do |f| %>
   <%= f.input :content, label: 'Commentaires' %>
   <%= f.input :rating, label: 'Évaluation globale', collection: Review::AUTHORIZED_RATINGS, include_blank: false %>
-  <%= f.submit "Publiez votre avis", class: "btn btn-primary" %>
+  <%= f.submit "Publiez votre avis", class: "our-btn our-btn-success" %>
 <% end %>

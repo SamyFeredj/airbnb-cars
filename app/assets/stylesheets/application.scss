@@ -38,6 +38,7 @@ body {
 .our-container {
   margin: 0 auto;
   width: fit-content;
+  max-width: 1200px;
   flex-grow: 1;
   h1 {
     color: #E1C16E;

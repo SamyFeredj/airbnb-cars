@@ -46,7 +46,7 @@
 
     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "our-btn our-btn-default" %>
 
-    <div>
+    <div class="satisfait">
       Vous n'êtes pas satisfait ?
       <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr?", turbo_confirm: "Êtes-vous sûr?" }, method: :delete, class: "our-btn our-btn-danger" %>
     </div>

@@ -1,5 +1,10 @@
+<h3 class="gold-text">Réservation</h3>
 <%= simple_form_for [car, reservation] do |f| %>
-  <%= f.input :start_date, html5: true, label: "Date de début" %>
-  <%= f.input :end_date, html5: true, label: "Date de fin" %>
-  <%= f.submit "Reservez" %>
+  <div class="row">
+    <%= f.input :start_date, html5: true, label: "Date de début" %>
+  </div>
+  <div class="row">
+    <%= f.input :end_date, html5: true, label: "Date de fin" %>
+  </div>
+  <%= f.submit "Reservez", class: "our-btn our-btn-success" %>
 <% end %>

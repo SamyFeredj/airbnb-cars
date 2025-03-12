@@ -1,9 +1,14 @@
 <div class="our-container">
-  <h1>Liste des réservations sur mes voitures</h1>
 
-  <div class="reservations-container">
-    <% @reservations.each do |reservation| %>
-      <%= render "reservation_card_link", reservation: reservation %>
-    <% end %>
-  </div>
+  <% if @reservations.empty? %>
+    <h1 class="gold-text">Il semblerait qu'il n'y ait pas encore de locations sur vos voitures...</h1>
+  <% else %>
+    <h1>Liste des réservations sur mes voitures</h1>
+
+    <div class="reservations-container">
+      <% @reservations.each do |reservation| %>
+        <%= render "reservation_card_link", reservation: reservation %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
