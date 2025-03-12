@@ -23,6 +23,8 @@ img_car7 = "https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/i
 img_car8 = "https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/cars/mercedes/c-class/mercedes--classe-c-berline--2021/mercedes--classe-c-berline--2021-m-1.jpg"
 img_car9 = "https://cdn-drivek-datak.motork.net/configurator-imgs/cars/fr/Original/PEUGEOT/308/40435_HATCHBACK-5-DOORS/peugeot-308-2021-side-front.jpg"
 img_car10 = "https://cdn.motor1.com/images/mgl/kNREB/s1/lamborghini-huracan-sto.webp"
+img_car11 = "https://cdn.classic-trader.com/I/images/1920_1920_inset/vehicle_ad_standard_image_60f48638d58c390bad4bc8fb8659945b.jpg"
+img_car12 = "https://www.goodtimers.com/fr/medias/2024/10/1960-cadillac-eldorado-biarritz.jpeg"
 #
 #
 #
@@ -112,20 +114,32 @@ car10.photo.attach(io: URI.open(img_car10), filename: 'car10.png', content_type:
 car10.save!
 puts " OK !"
 
+print "Creating car 11..."
+car11 = Car.new(brand: "Pontiac", car_model: "GTO", car_location: "Los Angeles - USA", rent_price: 180, kilometers: 150_000, release_year: 1967, user_id: samy.id)
+car11.photo.attach(io: URI.open(img_car11), filename: 'car11.png', content_type: 'image/png')
+car11.save!
+puts " OK !"
+
+print "Creating car 12..."
+car12 = Car.new(brand: "Cadillac", car_model: "Eldorado", car_location: "Bayonne - France", rent_price: 150, kilometers: 120_000, release_year: 1974, user_id: marcus.id)
+car12.photo.attach(io: URI.open(img_car12), filename: 'car12.png', content_type: 'image/png')
+car12.save!
+puts " OK !"
+
 puts " ====================== "
 
 
 #
 # ===== RESERVATIONS
 print "Creating reservation 1..."
-reservation1 = Reservation.new(car_id: car1.id, user_id: marcus.id, start_date: Date.new(2025, 01, 01), end_date: Date.new(2025, 01, 31))
+reservation1 = Reservation.new(car_id: car1.id, user_id: marcus.id, start_date: Date.new(2024, 01, 01), end_date: Date.new(2024, 01, 10))
 reservation1.total_price = car1.rent_price*((reservation1.end_date - reservation1.start_date).to_i)
 reservation1.status = "Pending"
 reservation1.save!
 puts " OK !"
 # ==
 print "Creating reservation 2..."
-reservation2 = Reservation.new(car_id: car2.id, user_id: marcus.id, start_date: Date.new(2025, 02, 01), end_date: Date.new(2025, 02, 28))
+reservation2 = Reservation.new(car_id: car2.id, user_id: marcus.id, start_date: Date.new(2025, 02, 01), end_date: Date.new(2025, 02, 10))
 reservation2.total_price = car2.rent_price*((reservation2.end_date - reservation2.start_date).to_i)
 reservation2.status = "Accepted"
 reservation2.save!
@@ -137,7 +151,20 @@ reservation3.total_price = car3.rent_price*((reservation3.end_date - reservation
 reservation3.status = "Rejected"
 reservation3.save!
 puts " OK !"
-#
+# ==
+print "Creating reservation 4..."
+reservation4 = Reservation.new(car_id: car11.id, user_id: marcus.id, start_date: Date.new(2022, 06, 01), end_date: Date.new(2022, 06, 10))
+reservation4.total_price = car11.rent_price*((reservation4.end_date - reservation4.start_date).to_i)
+reservation4.status = "Accepted"
+reservation4.save!
+puts " OK !"
+# ==
+print "Creating reservation 5..."
+reservation5 = Reservation.new(car_id: car12.id, user_id: laurent.id, start_date: Date.new(2025, 03, 01), end_date: Date.new(2025, 03, 10))
+reservation5.total_price = car11.rent_price*((reservation5.end_date - reservation5.start_date).to_i)
+reservation5.status = "Accepted"
+reservation5.save!
+puts " OK !"
 puts " ====================== "
 #
 # ===== REVIEWS
@@ -154,6 +181,11 @@ puts " OK !"
 print "Creating review 3..."
 review3 = Review.new(reservation_id: reservation2.id, rating: 3, content: "Une expérience conforme à mes attentes. Je recommande!")
 review3.save!
+puts " OK !"
+#
+print "Creating review 4..."
+review4 = Review.new(reservation_id: reservation4.id, rating: 4, content: "Une expérience conforme à mes attentes. Je recommande!")
+review4.save!
 puts " OK !"
 puts " ====================== "
 #
