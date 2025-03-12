@@ -1,9 +1,14 @@
 <div class="our-container">
-  <h1>Vos voitures</h1>
+  <% if @cars.empty? %>
+    <h1>Il semblerait que vous n'ayez pas renseigné de voitures...</h1>
+    <%= link_to "Ajouter une voiture !", new_car_path, class: "our-btn our-btn-success d-block mt-5" %>
+  <% else %>
+    <h1>Vos voitures</h1>
 
-  <div class="cars-container">
-    <% @cars.each do |car| %>
-      <%= render "car_card_link", car: car %>
-    <% end %>
-  </div>
+    <div class="cars-container">
+      <% @cars.each do |car| %>
+        <%= render "car_card_link", car: car %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
