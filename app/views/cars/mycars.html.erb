@@ -1,0 +1,9 @@
+<div class="our-container">
+  <h1>Vos voitures</h1>
+
+  <div class="cars-container">
+    <% @cars.each do |car| %>
+      <%= render "car_card_link", car: car %>
+    <% end %>
+  </div>
+</div>
