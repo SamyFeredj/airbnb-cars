@@ -160,17 +160,24 @@ reservation4.save!
 puts " OK !"
 # ==
 print "Creating reservation 5..."
-reservation5 = Reservation.new(car_id: car12.id, user_id: laurent.id, start_date: Date.new(2025, 03, 01), end_date: Date.new(2025, 03, 10))
-reservation5.total_price = car11.rent_price*((reservation5.end_date - reservation5.start_date).to_i)
+reservation5 = Reservation.new(car_id: car12.id, user_id: laurent.id, start_date: Date.new(2025, 03, 01), end_date: Date.new(2025, 03, 13))
+reservation5.total_price = car12.rent_price*((reservation5.end_date - reservation5.start_date).to_i)
 reservation5.status = "Accepted"
 reservation5.save!
 puts " OK !"
 # ==
 print "Creating reservation 6..."
 reservation6 = Reservation.new(car_id: car2.id, user_id: laurent.id, start_date: Date.new(2024, 06, 05), end_date: Date.new(2024, 06, 10))
-reservation6.total_price = car11.rent_price*((reservation6.end_date - reservation6.start_date).to_i)
+reservation6.total_price = car2.rent_price*((reservation6.end_date - reservation6.start_date).to_i)
 reservation6.status = "Accepted"
 reservation6.save!
+puts " OK !"
+# ==
+print "Creating reservation 7..."
+reservation7 = Reservation.new(car_id: car12.id, user_id: samy.id, start_date: Date.new(2025, 01, 05), end_date: Date.new(2025, 01, 10))
+reservation7.total_price = car12.rent_price*((reservation7.end_date - reservation7.start_date).to_i)
+reservation7.status = "Accepted"
+reservation7.save!
 puts " OK !"
 puts " ====================== "
 #
@@ -189,6 +196,11 @@ puts " ====================== "
 print "Creating review 3..."
 review3 = Review.new(reservation_id: reservation4.id, rating: 4, content: "Une expérience conforme à mes attentes. Je recommande!")
 review3.save!
+puts " OK !"
+#
+print "Creating review 4..."
+review4 = Review.new(reservation_id: reservation7.id, rating: 5, content: "Voiture superbe et sensations au max! Proprio super sympa en passant!")
+review4.save!
 puts " OK !"
 #
 # End of database generation
