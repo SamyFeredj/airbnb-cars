@@ -60,3 +60,32 @@
     gap: 10px;
   }
 }
+
+.review-title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.review-list {
+  li {
+    background-color: $clr-bg !important;
+    border: none;
+    padding: 10px 0;
+  }
+  .review-content {
+    color: white;
+  }
+}
+
+#review-form {
+  form {
+    background-color: $clr-bg;
+    color: $clr-light;
+    padding-left: 0;
+
+    input[type="submit"] {
+      border: none;
+    }
+  }
+}

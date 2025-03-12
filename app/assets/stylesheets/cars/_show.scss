@@ -1,15 +1,25 @@
 #new_reservation {
-  background: #B0B0B0;
+  padding: 0 !important;
+  background: $clr-bg;
+  color: $clr-light;
+  width: 100%;
+
+  input[type="submit"] {
+    border: none;
+  }
+
+  input[type="date"] {
+    width: 100%;
+  }
 }
 
 .car-show-container {
   max-width: 800px;
   margin: auto;
-  background: #B0B0B0;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: left;
+  color: $clr-light;
 }
 
 .car-image {
@@ -26,24 +36,23 @@
 
 .car-title {
   font-size: 2rem;
-  color: #333;
   margin-bottom: 10px;
 }
 
 .car-location, .car-price, .car-kilometers, .car-year {
   font-size: 1.2rem;
-  color: black;
   margin-bottom: 10px;
 }
 
 .back-arrow {
   display: flex;
   align-items: center;
+  width: fit-content;
   gap: 5px;
   font-size: 16px;
-  color: black;
   text-decoration: none;
   font-weight: bold;
+  color: $clr-light;
   transition: color 0.3s ease-in-out;
 
   i {
