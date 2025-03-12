@@ -165,6 +165,13 @@ reservation5.total_price = car11.rent_price*((reservation5.end_date - reservatio
 reservation5.status = "Accepted"
 reservation5.save!
 puts " OK !"
+# ==
+print "Creating reservation 6..."
+reservation6 = Reservation.new(car_id: car2.id, user_id: laurent.id, start_date: Date.new(2024, 06, 05), end_date: Date.new(2024, 06, 10))
+reservation6.total_price = car11.rent_price*((reservation6.end_date - reservation6.start_date).to_i)
+reservation6.status = "Accepted"
+reservation6.save!
+puts " OK !"
 puts " ====================== "
 #
 # ===== REVIEWS
@@ -172,22 +179,17 @@ print "Creating review 1..."
 review1 = Review.new(reservation_id: reservation2.id, rating: 4, content: "Super expérience! Voiture en très bon état et service au top")
 review1.save!
 puts " OK !"
-# ==
+#
 print "Creating review 2..."
-review2 = Review.new(reservation_id: reservation2.id, rating: 2, content: "La voiture n'était pas dans un très bon état. À ce prix là, on s'attend à une qualité supérieur... Je suis un peu déçu")
+review2 = Review.new(reservation_id: reservation6.id, rating: 5, content: "Voiture superbe et sensations au max! Proprio super sympa en passant!")
 review2.save!
 puts " OK !"
+puts " ====================== "
 #
 print "Creating review 3..."
-review3 = Review.new(reservation_id: reservation2.id, rating: 3, content: "Une expérience conforme à mes attentes. Je recommande!")
+review3 = Review.new(reservation_id: reservation4.id, rating: 4, content: "Une expérience conforme à mes attentes. Je recommande!")
 review3.save!
 puts " OK !"
-#
-print "Creating review 4..."
-review4 = Review.new(reservation_id: reservation4.id, rating: 4, content: "Une expérience conforme à mes attentes. Je recommande!")
-review4.save!
-puts " OK !"
-puts " ====================== "
 #
 # End of database generation
 puts "End of generation of database"

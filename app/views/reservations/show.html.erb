@@ -64,7 +64,7 @@
           <li class="list-group-item">
             <div class="review-title">
               <p class="review-user gold-text fw-700">
-                <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+                <%= @reservation.user.first_name.capitalize %> <%= @reservation.user.last_name.capitalize %>
               </p>
               <p class="review-stars">
                 <% Review::AUTHORIZED_RATINGS.each do |number| %>
