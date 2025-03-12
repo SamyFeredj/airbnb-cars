@@ -37,17 +37,17 @@ samy.save!
 puts " OK !"
 #
 print "Creating user 2..."
-arli = User.new(email: "arli@outlook.fr", password: "password", first_name: "arli", last_name: "sefgjini", phone_number: "0145567869")
+arli = User.new(email: "arli@outlook.fr", password: "password", first_name: "arli", last_name: "sefgjini", phone_number: "0145567869", picture_url: "arli-profil.png")
 arli.save!
 puts " OK !"
 #
 print "Creating user 3..."
-laurent = User.new(email: "laurent@gmail.com", password: "password", first_name: "laurent", last_name: "millet", phone_number: "0148628923")
+laurent = User.new(email: "laurent@gmail.com", password: "password", first_name: "laurent", last_name: "millet", phone_number: "0148628923", picture_url: "laurent-profil.png")
 laurent.save!
 puts " OK !"
 #
 print "Creating user 4..."
-marcus = User.new(email: "marcus@yahoo.fr", password: "password", first_name: "marcus", last_name: "meyer", phone_number: "0187654210")
+marcus = User.new(email: "marcus@yahoo.fr", password: "password", first_name: "marcus", last_name: "meyer", phone_number: "0187654210", picture_url: "marcus-profil.png")
 marcus.save!
 puts " OK !"
 #
