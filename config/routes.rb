@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :cars, only: [:index, :show, :new, :create] do
+  resources :cars, only: [:index, :show, :new, :create, :destroy] do
+    collection do
+      get :mycars
+    end
     resources :reservations, only: [:new, :create]
   end
   resources :reservations, only: [:index, :show, :update, :destroy] do

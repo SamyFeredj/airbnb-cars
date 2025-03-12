@@ -66,9 +66,9 @@
 
 
 .car-reservation-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
   gap: 30px; // Espacement entre la carte et le formulaire
   max-width: 1200px; // Pour éviter que les éléments soient trop larges
   margin: auto;
@@ -85,11 +85,16 @@
     align-items: center;
     height: 100%;
     gap: 30px;
-    width: 50%;
+    width: 100%;
+  }
+
+  #delete-car {
+    border: none;
+    align-self: flex-end;
   }
 }
 
 .car-show-container {
-  max-width: 55%; // La carte prend un peu plus d'espace
+  max-width: 80%; // La carte prend un peu plus d'espace
   flex-grow: 1;
 }
