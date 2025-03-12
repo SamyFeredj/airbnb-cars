@@ -2,27 +2,29 @@
 
 <%# <div class="our-container"> %>
     <div class="review-list" style="width: 80%;">
-      <h1 class="gold-text mx-0">Avis</h1>
-      <ul class="list-group">
-        <% reservations.each do |reservation| %>
-          <% reservation.reviews.each do |review| %>
-            <li class="list-group-item">
-              <div class="review-title">
-                <p class="review-user gold-text fw-700">
-                  <%= reservation.user.first_name.capitalize %> <%= reservation.user.last_name.capitalize %>
-                </p>
-                <p class="review-stars">
-                  <% Review::AUTHORIZED_RATINGS.each do |number| %>
-                    <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
-                  <% end %>
-                </p>
-              </div>
-              <div class="review-content">
-                <%= review.content %>
-              </div>
-            </li>
+      <% if reservations.find { |res| !res.reviews.empty? } %>
+        <h1 class="gold-text mx-0">Avis</h1>
+        <ul class="list-group">
+          <% reservations.each do |reservation| %>
+            <% reservation.reviews.each do |review| %>
+              <li class="list-group-item">
+                <div class="review-title">
+                  <p class="review-user gold-text fw-700">
+                    <%= reservation.user.first_name.capitalize %> <%= reservation.user.last_name.capitalize %>
+                  </p>
+                  <p class="review-stars">
+                    <% Review::AUTHORIZED_RATINGS.each do |number| %>
+                      <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
+                    <% end %>
+                  </p>
+                </div>
+                <div class="review-content">
+                  <%= review.content %>
+                </div>
+              </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+    <% end %>
   </div>
 <%# </div> %>

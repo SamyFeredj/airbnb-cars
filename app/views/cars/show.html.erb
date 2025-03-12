@@ -1,5 +1,5 @@
 <div class="car-reservation-container">
-    <div class="car-show-container col-4">
+    <div class="car-show-container">
       <% if @car.photo.attached? %>
         <%= image_tag @car.photo, class: "car-image" %>
       <% else %>
@@ -20,6 +20,9 @@
     </div>
 
     <div class="right-side-car-show">
+      <% if current_user.id == @car.user_id %>
+        <%= link_to "Retirer la voiture", car_path(@car), data: { turbo_method: :delete, turbo_confirm: "Retirer votre voiture ?" }, class: "our-btn our-btn-danger", id: "delete-car" %>
+      <% end %>
       <% if @car.user_id != current_user.id %>
         <div class="reservation-form">
           <%= render "reservations/reservation_form", reservation: @reservation, car: @car %>
